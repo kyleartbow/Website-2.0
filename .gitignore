@@ -1,0 +1,8 @@
+# Temporary Files
+*.tmp
+*.bak
+*.db
+*.ini
+
+# Folders
+.idea/

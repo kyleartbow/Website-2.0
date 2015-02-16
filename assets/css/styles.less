@@ -1,0 +1,521 @@
+
+/* ------- Variables ------- */
+
+@fullHeight: 100%;
+
+.repetitiveStyles {
+  color: #fff;
+  font-size: 100%;
+  font-family: HelveticaNeue-Light, Helvetica, Arial, sans-serif;
+}
+
+/* ------- Global ------- */
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url('../fonts/fontawesome.eot?-e43dk9');
+  src: url('../fonts/fontawesome.eot?#iefix-e43dk9') format('embedded-opentype'),
+  url('../fonts/fontawesome.woff?-e43dk9') format('woff'),
+  url('../fonts/fontawesome.ttf?-e43dk9') format('truetype'),
+  url('../fonts/fontawesome.svg?-e43dk9#fontawesome') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*, *:after, *:before {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, .container, .cbp-fbscroller, .cbp-fbscroller section {
+  height: @fullHeight;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111;
+  z-index: 999;
+
+  #status {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -20px 0 0 -20px;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/status.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+}
+
+/* ------- Styles ------- */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  .repetitiveStyles;
+
+  a {
+    text-decoration: none;
+  }
+
+  /* clearfix */
+  .clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+  }
+  .clearfix:after {
+    clear: both;
+  }
+
+}
+
+/* ------- Isotope ------- */
+
+@animDuration: 0.5s; // change duration value to whatever you like
+
+.isotope {
+
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  transition-property: height, width;
+
+  -webkit-transition-duration: @animDuration;
+  -moz-transition-duration: @animDuration;
+  transition-duration: @animDuration;
+
+  .isotope-item {
+
+    z-index: 2;
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    transition-property: transform, opacity;
+
+    -webkit-transition-duration: @animDuration;
+    -moz-transition-duration: @animDuration;
+    transition-duration: @animDuration;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    &.isotope-hidden {
+      z-index: 1;
+      pointer-events: none;
+    }
+
+  }
+
+}
+
+/* ------- Main Nav ------- */
+
+.cbp-fbscroller {
+
+  /* Brand */
+  .ez-logo {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    margin: 25px 0 0 20px;
+    padding: 0;
+    width: 210px;
+    height: 60px;
+    background:url(../images/logo.png) no-repeat;
+    z-index: 101;
+  }
+
+
+  /* Menu button */
+  .menubutton{
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    margin: 20px 0 0 20px;
+    padding: 0;
+    width: 210px;
+    height: 100px;
+    z-index: 101;
+  }
+
+
+
+  /* Information */
+  .ez-information {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    margin: 20px 20px 0 0;
+    padding: 0;
+    width: auto;
+    height: 100px;
+    text-align: right;
+    z-index: 101;
+
+    a {
+      display: inline-block;
+      top: 18px;
+      margin: 0 5px 0 0;
+      padding: 0;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border: 2px solid #fff;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;
+      background-color: transparent;
+      color: #fff;
+
+      &:hover, &:active {
+        background-color: #fff;
+        color: #111;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+
+    }
+
+  }
+
+  /* Navigation */
+  & > nav {
+    position: fixed;
+    margin: 0;
+    padding: 40px 0 0;
+    width: 100%;
+    height: 100px;
+    font-size: 18px;
+    text-align: center;
+    z-index: 100;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.5)), color-stop(100%,rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
+    background: -o-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 );
+
+    a {
+      display: inline-block;
+      margin: 0 10px 0 10px;
+      height: 30px;
+      color: rgba(255,255,255,0.75);
+
+      &:hover {
+        color: #fff;
+      }
+
+      &.cbp-fbcurrent {
+        color: #fff;
+        border-bottom: 2px solid #fff;
+      }
+
+    }
+
+
+  }
+  #navbg{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    opacity: 0;
+    background:#000}
+
+}
+
+/* ------- Section fbsection1 ------- */
+
+#fbsection1 {
+  background-color:#000;
+
+  .sliderContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+
+    .iosSlider {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      .slider {
+        width: 100%;
+        height: 100%;
+
+        .item {
+          float: left;
+          width: 100%;
+          height: 100%;
+          background-position: 50% 50%;
+        }
+
+        .item1 {
+          background: url(../images/1.jpg) no-repeat;
+          background-size: cover;
+        }
+
+        .item2 {
+          background: url(../images/2.jpg) no-repeat;
+          background-size: cover;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+/* ------- Section fbsection2 ------- */
+
+#fbsection2 {
+  background-color:#f0f0f0;
+
+  .container {
+  }
+
+}
+
+/* ------- Slideshow ------- */
+
+.slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  z-index: 500;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  background: rgba(0,0,0,0.8);
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0.5)), color-stop(100%,rgba(0,0,0,0.9))); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.9) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.9) 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.9) 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.9) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#e6000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+
+  ul {
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: translate3d(0, 0, 150px);
+    transform: translate3d(0, 0, 150px);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+
+    &.animatable {
+
+      li {
+        -webkit-transition: -webkit-transform 0.5s;
+        transition: transform 0.5s;
+      }
+
+    }
+
+  }
+
+  li {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: 0 0 0 -50%;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+
+    &.show {
+      visibility: visible;
+      overflow: hidden;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.8);
+      -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+    }
+
+    &.current:after {
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transition: opacity 0.3s, visibility 0s 0.3s;
+      transition: opacity 0.3s, visibility 0s 0.3s;}
+
+    .liveview{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      color:#fff;
+      background-color:#16a085;
+      z-index: 1;
+      text-align: center;
+      line-height: 20px;
+      font-size: 18px;
+      padding: 15px 0;
+      box-shadow: 0 -5px 100px 5px rgba(0,0,0,0.5);
+    }
+
+
+  }
+
+  figure {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-top: 0px solid #fff;
+    border-bottom: 0px solid #fff;
+    box-shadow: 0 20px 100px 1px #000;
+    border-radius:0px;
+    overflow:scroll;
+  }
+
+  figcaption {
+    padding: 0px;
+    color:#000;
+    width: 100%;
+    position:absolute;
+    bottom: 0;
+
+
+    h3 {
+      font-weight: 300;
+      font-size: 200%;
+    }
+
+    .liveview{
+      position: absolute;
+      top:0;
+      right:0;
+      height:100%;
+      width:150px;
+      padding:50px 30px 50px 30px;
+      background-color: #16a085;
+      text-align: center;
+      color: #fff;
+      line-height: 40px;
+      font-size: 20px;
+    }
+
+  }
+
+  /* Navigation */
+
+  nav {
+
+    span {
+      position: fixed;
+      padding: 3%;
+      z-index: 1000;
+      font-size: 2.2em;
+      text-align: center;
+      cursor: pointer;
+
+      &.nav-prev,
+      &.nav-next {
+        display:block;
+        top: 50%;
+        padding-top:300px;
+        height:600px;
+        color:#fff;
+        text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+
+      &.nav-next {
+        right: 0;
+      }
+
+      &.nav-close {
+        top: 0;
+        right: 5px  ;
+        padding: 0.5em 1em;
+        color:#fff;
+        text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+      }
+
+    }
+
+  }
+
+}
+
+.icon:before,
+.icon:after {
+  font-family: 'fontawesome';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+}
+
+
+/* ------- Footer ------- */
+footer{
+  color:#000;
+  height:100px;}
+
+
+/* I have no idea where this is or what are this for - Genesis */
+
+.slideshow-open {
+
+  .slideshow {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+
+    ul {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+  }
+
+}
